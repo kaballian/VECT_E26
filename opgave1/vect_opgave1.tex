@@ -1,0 +1,86 @@
+\section{Exercise 1}
+\textit{consider the cube $C = {(x,y,z) \in \mathbb{R}^3 | 
+0 \leq x \leq 1,
+0 \leq y \leq 1,
+0 \leq z \leq 1}$ in $\mathbb{R}^3$. 
+Find the angle between the plane $P_1$ containing
+the 3 points: $(0,1,0),(1,0,0),(1,1,1)$ and the plane $P_2$ 
+containing the 3 points: $(0,0,0),(1,1,0),(1,0,1)$.}
+
+\tdplotsetmaincoords{70}{120}
+
+\begin{tikzpicture}[tdplot_main_coords, scale=2]
+    
+%cube coordinates
+\coordinate (O) at (0,0,0);
+\coordinate (X) at (1,0,0);
+\coordinate (Y) at (0,1,0);
+\coordinate (Z) at (0,0,1);
+
+%plane1
+\coordinate (P1A) at (0,1,0); 
+\coordinate (P1B) at (1,0,0);
+\coordinate (P1C) at (1,1,1);
+%plane2
+\coordinate (P2A) at (0,0,0); 
+\coordinate (P2B) at (1,1,0);
+\coordinate (P2C) at (1,0,1);
+
+
+\coordinate (XY) at (1,1,0);
+\coordinate (XZ) at (1,0,1);
+\coordinate (YZ) at (0,1,1);
+\coordinate (XYZ) at (1,1,1);
+
+%edges
+\draw (O) -- (X) -- (XY) -- (Y) -- cycle;
+\draw (Z) -- (XZ) -- (XYZ) -- (YZ) -- cycle;
+\draw (O) -- (Z);
+\draw (X) -- (XZ);
+\draw (Y) -- (YZ);
+\draw (XY) -- (XYZ);
+
+
+%plane throught the three corners
+% \filldraw[fill=blue!30, opacity=0.6, draw=blue, thick]
+%     (A) -- (B) -- (C) -- cycle;
+%plane p1
+\filldraw[fill=blue!30, opacity=0.6, draw=blue, thick]
+    (P1A) -- (P1B) -- (P1C) -- cycle;
+%plane p2
+\filldraw[fill=red!30, opacity=0.6, draw=red, thick]
+    (P2A) -- (P2B) -- (P2C) -- cycle;
+
+
+%mark corners
+\fill (X) circle (1pt) node[below] {$X$};
+\fill (Y) circle (1pt) node[left] {$Y$};
+\fill (Z) circle (1pt) node[above] {$Z$};
+
+
+\end{tikzpicture}
+
+To find the angle between the two planes, we must firstly find the normal vector that
+the individual planes define and then find the angle between those two.
+
+\[
+\vec{P_{1X}} =
+\begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix},
+\qquad
+\vec{P_{1Y}} =
+\begin{pmatrix}
+1 \\ 0 \\ 0
+\end{pmatrix},
+\qquad
+\vec{P_{1Z}} =
+\begin{pmatrix}
+1 \\ 1 \\ 1
+\end{pmatrix}
+\]\\
+
+Vectors for $P_1$
+\[
+
+\]

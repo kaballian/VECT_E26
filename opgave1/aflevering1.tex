@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[marginparsep=8pt, margin=1.75cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[siunitx]{circuitikz}
+\usepackage{booktabs}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx} % for v pr sqrt htz
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{subcaption}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+
+%curtom macro
+\newcommand{\VperRootHz}[1]{\frac{\mathrm{#1V}}{\sqrt{\mathrm{Hz}}}}  %use $VperRootHz{n}$, $VperRootHz{\mu}$ etc
+
+\pgfplotsset{compat=newest}
+
+
+
+
+
+\begin{document}
+
+% \input{forside.tex}
+\input{vect_opgave1.tex}
+% \input{vect_opgave2.tex}
+% \input{vect_opgave3.tex}
+\end{document}
+
+
+
