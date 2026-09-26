@@ -1,5 +1,5 @@
 \section{exercise 2}
-\textit{Find the center of mass ($\bar{x},\bar{y},\bar{z}$), for the wire C shapes as a helix, with density p = kz, (k is a constant).
+\textit{Find the center of mass ($\bar{x},\bar{y},\bar{z}$), for the wire C shaped as a helix, with density p = kz, (k is a constant).
 The wire C has parametrization:}
 \[
 x(t) = 3cos(t), y(t)=3sin(t), z(t)=4t, 0\leq t \leq \pi
@@ -11,3 +11,116 @@ x(t) = 3cos(t), y(t)=3sin(t), z(t)=4t, 0\leq t \leq \pi
     \item $m = \int_c p(x,y,z)ds$
     \item $\bar{x} = \frac{1}{m} \int_c xp(x,y,z)ds, \bar{y} = \frac{1}{m}\int_c yp(x,y,z)ds, \bar{z}=\frac{1}{m}\int_c zp(x,y,z)ds$ 
 \end{itemize}
+
+This is a rather convoluted question, essentially asking, if we have a piece of wire, in this case a 
+helix, meaning there is a one large curve, since it is bounded to $0\leq t \leq \pi$, what is the 
+position in space of the center of its mass. The parametrization describes how the \textit{coil} will 
+expand if we increase to. The first two components $x$ and $y$ are trigonometric functions, causing the
+direction to be circular around the $z$-axis, and the $z$ component simply indicates that it increases
+linearly with $t$.\\
+
+Firstly we need to calculate the change in $t$ into changes on the actual physical wire. We're given the
+density $p$ and mass is the product of density and lenght. So the curve length is calculated as:
+
+
+\[\frac{ds}{dt} = \sqrt{x'(t)^2 + y'(t)^2 + z'(t)^2}\] 
+differentiating the functions
+\[x'(t) = \frac{d}{dt}x(t) \Rightarrow -3sin(t)\]
+\[y'(t) = \frac{d}{dt}y(t) = \frac{d}{dt}3cos(t)\]
+\[z'(t) = \frac{d}{dt}z(t) = \frac{d}{dt}4t(t)\]
+into the curve length
+\[\frac{ds}{dt} = \sqrt{(-3\cdot sin(t))^2+(3\cdot cos(t))^2+(4t(t))^2}\]
+rearrange, use distributive property and recognize the idiot formula $sin^2(t) + cos^2(t) = 1$
+\[=\sqrt{9 + 1 + 16}  = \sqrt{25} = 5\]
+\[ ds = 5dt\]
+relationship for density is given, with z and k is some constant, and can we rewritten as:
+\[p = k \cdot z \]
+\[p = 4tk\]
+substituted into the mass relationship, with a change of variable from the $\frac{ds}{dt}$ relationship,
+so that mass is now in terms of $t$:
+\[m = \int_0^\pi (4tk)(5)dt \Rightarrow 10k\pi^2\]
+Since the lower bound is zero and are a single term with factors, it gets reduced to zero.
+Each of the coordinates for the center of mass can now be evaluated.
+\[\bar{x} = \frac{1}{10k\pi^2}\int_0^\pi 3\cdot cos(t)\cdot 4t \cdot k \cdot 5 dt\]
+\[ = \frac{60k}{10k\pi^2} \int_0^\pi t\cdot cos(t)dt \Rightarrow  \frac{60k}{10k\pi^2} [t\cdot sin(t) +cos(t)]_0^\pi\]
+\[= \frac{6}{\pi^2} \cdot (-1) - \frac{6}{\pi^2}+cos(0)=-\frac{12}{\pi^2}\]
+The same can be done for the two other coordinates:
+\[\bar{y} = \frac{1}{10k\pi^2}\int_0^\pi 3\cdot sin(t)\cdot 4t \cdot k \cdot 5 dt\]
+\[ = \frac{60k}{10k\pi^2} \int_0^\pi t \cdot sin(t)dt \Rightarrow 
+\frac{6}{\pi^2}[sin(t) - t\cdot cos(t)]_0^\pi \Rightarrow \frac{6}{\pi}\]
+
+\[\bar{z} = \frac{1}{10k\pi^2}\int_0^\pi (4t)\cdot 4t \cdot k \cdot 5 dt\]
+\[ = \frac{80k}{10k\pi^2} \int_0^\pi t^2 dt \Rightarrow 
+\frac{8}{\pi^2}[\frac{t^3}{2}]_0^\pi \Rightarrow \frac{8\pi}{3}\]
+
+Giving coordinates:
+\[[\bar{x}, \bar{y}, \bar{z}] = [-\frac{12}{\pi^2}, \frac{6}{\pi}, \frac{8\pi}{3} ]\]
+
+
+
+
+% \begin{figure}[ht]
+%     \centering
+
+%     \begin{tikzpicture}
+%     \begin{axis}[
+%         view={45}{25},
+%         axis lines=center,
+%         xlabel={$x$},
+%         ylabel={$y$},
+%         zlabel={$z$},
+%         xmin=-4, xmax=4,
+%         ymin=-4, ymax=4,
+%         zmin=0, zmax=13,
+%         width=10cm,
+%         height=10cm,
+%         grid=major,
+%     ]
+
+%     % Helix: r(t) = (3 cos(t), 3 sin(t), 4t)
+%     \addplot3[
+%         thick,
+%         domain=0:pi,
+%         samples=100,
+%         variable=\t,
+%     ]
+%     ({3*cos(deg(\t))},
+%      {3*sin(deg(\t))},
+%      {4*\t});
+
+%     % Starting point
+%     \addplot3[
+%         only marks,
+%         mark=*,
+%     ]
+%     coordinates {(3,0,0)};
+
+%     % End point
+%     \addplot3[
+%         only marks,
+%         mark=*,
+%     ]
+%     coordinates {(-3,0,{4*pi})};
+
+%     % Center of mass
+%     \addplot3[
+%         only marks,
+%         mark=*,
+%         mark size=3pt,
+%     ]
+%     coordinates {
+%         ({-12/pi^2},{6/pi},{8*pi/3})
+%     };
+
+%     % Label center of mass
+%     \node at
+%         (axis cs:{-12/pi^2},{6/pi},{8*pi/3})
+%         [above right]
+%         {$\left(\bar{x},\bar{y},\bar{z}\right)$};
+
+%     \end{axis}
+%     \end{tikzpicture}
+
+%     \caption{The parameterized helix $C$ and its center of mass.}
+%     \label{fig:helix}
+% \end{figure}
