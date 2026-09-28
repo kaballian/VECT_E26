@@ -1,0 +1,35 @@
+\section{exercise 4}
+\textit{let $\phi$ be a scalar field and $F$ a vector field given by:}
+\[\phi(x,y,z) = xyz^2\] and \[F(x,y,z) = (x^2,y,z)\]
+
+\begin{itemize}
+    \item Find $\nabla\phi$ and $\nabla \cdot F$ and $\nabla \cdot (\phi F)$
+    \item try to deduce a general expression for $\nabla \cdot (\phi F)$ expressed by $\nabla \phi$ and $\nabla \cdot F$
+\end{itemize}
+
+
+Given the scalar field, the gradient $\nabla$ can be found by differentiating 
+once in each direction. The gradient of a scalar field is a vector field.
+\[
+\nabla \phi = 
+\begin{bmatrix}
+\frac{\partial \phi}{\partial x}\\
+\frac{\partial \phi}{\partial y}\\
+\frac{\partial \phi}{\partial z}
+\end{bmatrix}
+=
+\begin{bmatrix}
+{yz^2}\\
+{xz^2}\\
+{2xyz}
+\end{bmatrix}
+\]
+
+The next is finding the divergence of a vector field, which turns it into a scalar field.
+\[
+\nabla F = 
+\frac{\partial F_x}{\partial x} 
++ \frac{\partial F_y}{\partial y} 
++ \frac{\partial F_z}{\partial z}
+= 2x + 2
+\]
