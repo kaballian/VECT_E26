@@ -1,0 +1,52 @@
+\section{exercise 3}
+\textit{Let $F$ be a vector field on $\mathbb{R}^3$ given by:}
+\[F(x,y,z) = (0,0,1)\]
+\textit{Using surface integrals, show that the flux through the upper hemisphere of the unit sphere:}
+\[S_{+}^2 = \{(x,y,z)\in \mathbb{R}^3  |x^2+y^2+z^2 = 1, z \geq 0\}\] 
+\textit{is the same as the flux through the unit disk in the xy-plane}
+\[D = \{(x,y,z)\in \mathbb{R}^3 |x^2+y^2 \leq 1, z=0\}\]\\
+
+we're given a vector field that essentially shows an upwards flow in
+in the $Z$ direction, with a magnitude of 1. 
+\[F(x,y,z) = (0,0,1)\]
+As for the hemisphere we're bounded for $ z\geq0$, therefore
+we can solve the hemisphere equation for z, essentially telling us
+the height $z$ at any point in the sphere over $(x,y)$ on the disc underneath.
+
+\[x^2+y^2+z^2 = 1 \Rightarrow z = \sqrt{1-x^2-y^2}\]
+Then we can establish what the flux is at any tiny piece in the hemisphere.
+This can be expressed as a tiny patches on the hemisphere. If we imagine we're looking
+down along the Z-axis onto the XY-plane, each of the small patch on the hemisphere, casts
+a project or shadow onto the XY-disk. These two surfaces must be of equal size.
+This means that:
+
+\[\iint_S \textbf{F}\cdot \hat{\textbf{n}} dS = \iint_D dA\]
+In other words, the entire hemisphere projects onto the disk. 
+The unit disk is given as:
+\[D=x^2+y^2 = 1\]
+And because it is circular, polar coodinates can be used to express it. And with
+a unit disk, the bounds are $0\leq r \leq 1$ , $0\leq \theta \leq 2\pi$.
+The changes in coordinates $x=rcos(\theta)$,$y=rsin(\theta)$, results in every 
+little area becoming $dA = r dr d\theta$. The so the expression for the flux related
+to the disk becomes:
+\[\Phi=\int_0^{2\pi}\int_0^1 r dr d\theta\]
+The extra r, introduced here, is to compensate for the arc length.
+Evaluating $\Phi$\\
+\[\Phi=\int_0^{2\pi}\int_0^1 r dr d\theta \Rightarrow \int_{0}^{2\pi}[\frac{r^2}{2}]_0^1d\theta \]
+\[\Rightarrow \int_{0}^{2\pi}\frac{1}{2} d\theta \Rightarrow [\frac{\theta}{2}]_0^{2\pi} = \frac{2\pi}{2} = \pi\]
+To calculate the flux through the disk.\\
+
+Using the same field $F = (0,0,1)$, we need the normal vector to the surface of the disk in the
+same orientation as the vector field meaning $\hat{\textbf{n} = (0,0,1)}$. The dot-product
+of these two vectors becomes $\textbf{F} \cdot \hat{\textbf{n}} = 1$, meaning they point in the same direction.
+This lets us create the integral of the disk flux.
+\[\iint_D \textbf{F} \cdot \hat{\textbf{n}} dA = \iint_D 1 dA = \int_{0}^{2\pi} \int_{0}^{1} r dr d\theta = \pi \] 
+
+This can also be shown when the hemisphere gets parameterized as $r(x,y)=(x,y,f(x,y))$ where $f(x,y) = \sqrt{1-x^2-y^2}$.
+We can then create to small vectors, representing small movement along the surface of the hemisphere
+$rx = (1,0,fx), ry = (0,1,fy)$. The cross product of those two, will then be perpendicular to them, as it'll become
+the normal vector to that tiny surface patch. 
+The dot-product of this and the vector field $F$ yields:
+\[\textbf{F} \cdot (rx \times ry) =  1\]
+meaning that, that the vector picks out the z-component of the vector field. This leads to
+\[\Phi_S = \iint_D 1 dA = \pi\] 
