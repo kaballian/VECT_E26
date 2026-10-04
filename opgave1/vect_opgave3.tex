@@ -6,6 +6,37 @@
 \textit{is the same as the flux through the unit disk in the xy-plane}
 \[D = \{(x,y,z)\in \mathbb{R}^3 |x^2+y^2 \leq 1, z=0\}\]\\
 
+% we're given a vector field that essentially shows an upwards flow in
+% in the $Z$ direction, with a magnitude of 1. 
+% \[F(x,y,z) = (0,0,1)\]
+% As for the hemisphere we're bounded for $ z\geq0$, therefore
+% we can solve the hemisphere equation for z, essentially telling us
+% the height $z$ at any point in the sphere over $(x,y)$ on the disc underneath.
+
+% \[x^2+y^2+z^2 = 1 \Rightarrow z = \sqrt{1-x^2-y^2}\]
+% Then we can establish what the flux is at any tiny piece in the hemisphere.
+% This can be expressed as a tiny patches on the hemisphere. If we imagine we're looking
+% down along the Z-axis onto the XY-plane, each of the small patch on the hemisphere, casts
+% a project or shadow onto the XY-disk. These two surfaces must be of equal size.
+% This means that:
+
+% \[\iint_S \textbf{F}\cdot \hat{\textbf{n}} dS = \iint_D dA\]
+% In other words, the entire hemisphere projects onto the disk. 
+% The unit disk is given as:
+% \[D=x^2+y^2 = 1\]
+% And because it is circular, polar coodinates can be used to express it. And with
+% a unit disk, the bounds are $0\leq r \leq 1$ , $0\leq \theta \leq 2\pi$.
+% The changes in coordinates $x=rcos(\theta)$,$y=rsin(\theta)$, results in every 
+% little area becoming $dA = r dr d\theta$. The so the expression for the flux related
+% to the disk becomes:
+% \[\Phi=\int_0^{2\pi}\int_0^1 r dr d\theta\]
+% The extra r, introduced here, is to compensate for the arc length.
+% Evaluating $\Phi$\\
+% \[\Phi=\int_0^{2\pi}\int_0^1 r dr d\theta \Rightarrow \int_{0}^{2\pi}[\frac{r^2}{2}]_0^1d\theta \]
+% \[\Rightarrow \int_{0}^{2\pi}\frac{1}{2} d\theta \Rightarrow [\frac{\theta}{2}]_0^{2\pi} = \frac{2\pi}{2} = \pi\]
+
+
+\subsection{the unit sphere}
 we're given a vector field that essentially shows an upwards flow in
 in the $Z$ direction, with a magnitude of 1. 
 \[F(x,y,z) = (0,0,1)\]
@@ -14,26 +45,44 @@ we can solve the hemisphere equation for z, essentially telling us
 the height $z$ at any point in the sphere over $(x,y)$ on the disc underneath.
 
 \[x^2+y^2+z^2 = 1 \Rightarrow z = \sqrt{1-x^2-y^2}\]
-Then we can establish what the flux is at any tiny piece in the hemisphere.
-This can be expressed as a tiny patches on the hemisphere. If we imagine we're looking
-down along the Z-axis onto the XY-plane, each of the small patch on the hemisphere, casts
-a project or shadow onto the XY-disk. These two surfaces must be of equal size.
-This means that:
+this can be parameterized using x and y 
+\[r(x,y) = (x,y,\sqrt{1-x^2-y^2})\]
+and x and y must lie within the unit disc
+\[x^2+y^2 = 1\]
 
-\[\iint_S \textbf{F}\cdot \hat{\textbf{n}} dS = \iint_D dA\]
-In other words, the entire hemisphere projects onto the disk. 
-The unit disk is given as:
-\[D=x^2+y^2 = 1\]
-And because it is circular, polar coodinates can be used to express it. And with
-a unit disk, the bounds are $0\leq r \leq 1$ , $0\leq \theta \leq 2\pi$.
-The changes in coordinates $x=rcos(\theta)$,$y=rsin(\theta)$, results in every 
-little area becoming $dA = r dr d\theta$. The so the expression for the flux related
-to the disk becomes:
-\[\Phi=\int_0^{2\pi}\int_0^1 r dr d\theta\]
-The extra r, introduced here, is to compensate for the arc length.
-Evaluating $\Phi$\\
-\[\Phi=\int_0^{2\pi}\int_0^1 r dr d\theta \Rightarrow \int_{0}^{2\pi}[\frac{r^2}{2}]_0^1d\theta \]
-\[\Rightarrow \int_{0}^{2\pi}\frac{1}{2} d\theta \Rightarrow [\frac{\theta}{2}]_0^{2\pi} = \frac{2\pi}{2} = \pi\]
+We can then differentiate r with respect to x 
+\[r_x = \frac{\delta r}{\delta x} \Rightarrow r_x = (1,0, \frac{-x}{\sqrt{1-x^2-y^2}})\]
+and r with respect y
+\[r_y = \frac{\delta r}{\delta x} \Rightarrow r_x = (0,1, \frac{-y}{\sqrt{1-x^2-y^2}})\]
+This lets us find the vector surface element $\textbf{n}ds$, this is done by creaing the
+vector cross product 
+\[ (r_x \times r_y) = (\frac{x}{\sqrt{1-x^2-y^2}},\frac{y}{\sqrt{1-x^2-y^2}},1 )\]
+
+this leads to the expression 
+\[\textbf{n}dS = (r_x \times r_y) = (\frac{x}{\sqrt{1-x^2-y^2}},\frac{y}{\sqrt{1-x^2-y^2}},1 ) dx dy\]
+
+This can be dottet with our vector field:
+\[\textbf{F} \cdot \textbf{n} dS = (0,0,1) \cdot (\frac{x}{\sqrt{1-x^2-y^2}},\frac{y}{\sqrt{1-x^2-y^2}},1 ) dx dy \]
+which evaluates to 
+\[= 1 dx dy\]
+
+Now we can find the surface integral over the surface S, by using the vector field.
+\[Q_s = \iint_S \textbf{F} \cdot \textbf{n} dS\]
+The limits here can be derived:
+\[x^2+y^2 = 1 \Rightarrow x = \pm \sqrt{1-y^2}\]
+therefore y is bound within.
+\[-1\leq y \leq1\]
+and x is bound by
+\[-\sqrt{1-y^2} \leq x \leq \sqrt{1-y^2}\]
+Inserting these limits into the integral
+\[Q_s = \int_{-1}^{1}\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} 1 dx dy\]
+These have been solved using MATHCAD
+The inner integration 
+\[\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}} 1 dx = 2\sqrt{1-y^2}\]
+And the outer aswell
+\[\int_{-1}^{1}2\sqrt{1-y^2} dy = \pi \] 
+
+\subsection{the unit disk}
 To calculate the flux through the disk.\\
 
 Using the same field $F = (0,0,1)$, we need the normal vector to the surface of the disk in the
@@ -50,3 +99,4 @@ The dot-product of this and the vector field $F$ yields:
 \[\textbf{F} \cdot (rx \times ry) =  1\]
 meaning that, that the vector picks out the z-component of the vector field. This leads to
 \[\Phi_S = \iint_D 1 dA = \pi\] 
+
