@@ -7,11 +7,11 @@
     \item try to deduce a general expression for $\nabla \cdot (\phi F)$ expressed by $\nabla \phi$ and $\nabla \cdot F$
 \end{itemize}
 
-
+\subsection{opgave 1}
 Given the scalar field, the gradient $\nabla$ can be found by differentiating 
 once in each direction. The gradient of a scalar field is a vector field.
 \[
-\nabla \phi = 
+\nabla \cdot \phi = 
 \begin{bmatrix}
 \frac{\partial \phi}{\partial x}\\
 \frac{\partial \phi}{\partial y}\\
@@ -24,12 +24,25 @@ once in each direction. The gradient of a scalar field is a vector field.
 {2xyz}
 \end{bmatrix}
 \]
-
+\subsection{opgave 2}
 The next is finding the divergence of a vector field, which turns it into a scalar field.
 \[
-\nabla F = 
+\nabla \cdot F = 
 \frac{\partial F_x}{\partial x} 
 + \frac{\partial F_y}{\partial y} 
 + \frac{\partial F_z}{\partial z}
 = 2x + 2
 \]
+\subsection{opgave 3}
+\[\phi \textbf{F} = xyz^2(x^2,y,z)\]
+can be expressed as:
+\[ \phi \textbf{F} = (x^3yz^2, xy^2, xyz^3)\]
+now the divergencecan be taken
+\[\nabla \cdot (\phi \textbf{F}) = \frac{\delta}{\delta x}(x^3yz^2)+ \frac{\delta}{\delta y}(xy^2)+\frac{\delta }{\delta z}(xyz^3)\]
+individually they become:
+\[\frac{\delta}{\delta x}(x^3yz^2) =3x^2yz^2\]
+\[\frac{\delta}{\delta x}(xy^2) = 2xyz^2\]
+\[\frac{\delta}{\delta x}(xyz^3) = 3xyz^2\]
+
+the final result will be a sum of those terms
+I made some mistakes and this is how far i got...

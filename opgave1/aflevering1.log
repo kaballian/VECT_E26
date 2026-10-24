@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.19)  4 OCT 2026 23:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.10.19)  4 OCT 2026 23:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,7 +913,18 @@ Package biblatex Info: ... file 'aflevering1.bbl' not found.
 No file aflevering1.bbl.
 Package biblatex Info: Reference section=0 on input line 31.
 Package biblatex Info: Reference segment=0 on input line 31.
-(vect_opgave1.tex
+(forside2.tex
+<forside_ting.png, id=4, 532.99126pt x 286.82156pt>
+File: forside_ting.png Graphic file (type png)
+<use forside_ting.png>
+Package pdftex.def Info: forside_ting.png  used on input line 3.
+(pdftex.def)             Requested size: 532.98996pt x 286.82085pt.
+
+Overfull \hbox (18.27959pt too wide) in paragraph at lines 3--4
+ [][] 
+ []
+
+) [1{C:/Users/alext/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./forside_ting.png>] (vect_opgave1.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
  (C:\Users\alext\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -926,28 +937,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-) [1
+) [2
 
-{C:/Users/alext/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (vect_opgave2.tex
+
+] (vect_opgave2.tex
 Underfull \hbox (badness 10000) in paragraph at lines 15--21
 
  []
 
-[2
+[3
 
-]) [3] (vect_opgave3.tex
+]) [4] (vect_opgave3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-[4
+[5
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-
- []
-
-) [5] (vect_opgave4.tex) [6
+]) [6] (vect_opgave4.tex) [7
 
 ] (aflevering1.aux)
  ***********
@@ -959,17 +966,17 @@ Package logreq Info: Writing requests to 'aflevering1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58104 strings out of 474486
- 1523138 string characters out of 5743754
+ 58122 strings out of 474486
+ 1523546 string characters out of 5743754
  2625321 words of memory out of 5000000
- 79797 multiletter control sequences out of 15000+600000
+ 79812 multiletter control sequences out of 15000+600000
  562586 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,7n,121p,769b,1728s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\alext\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/alext/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on aflevering1.pdf (6 pages, 164138 bytes).
+Output written on aflevering1.pdf (7 pages, 176653 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
+ 97 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
