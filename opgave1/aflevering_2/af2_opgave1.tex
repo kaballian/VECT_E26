@@ -5,3 +5,81 @@
 \[\oint_C \mathbb{F} \cdot dr\]
 \textit{where $C=\{(x,y,z) \in \mathbb{R}^3 | x^2 + y^2 = 1, z = 4\}$ (for positive orientation in the xy-plane)}
 
+%example 2.10 kan bruges her
+
+Because x and y is defined as a unit circle in C, with a constant Z value, this can be
+rewritte as using polar coordinates, which becomes
+\[x = cos(\theta),
+\qquad 
+y = sin(\theta),
+\qquad z = 4
+\]
+This changes the bound of integration to:
+\[
+\int_{0}^{2\pi}\]
+
+\[r(\theta) = 
+\begin{pmatrix}
+cos(\theta) \\ sin(\theta) \\ 4
+\end{pmatrix}
+\]
+And F can also be rewritte in terms of parameter $\theta$ as $\textbf{dr}$, where:
+\[dr(\theta) = 
+\begin{pmatrix}
+-sin(\theta) \\ cos(\theta) \\ 0
+\end{pmatrix}\]
+which makes $F(dr(\theta))$
+\[
+F(dr(\theta)) = 
+\begin{pmatrix}
+    4cos(\theta)sin^2(\theta) \\
+    4sin(\theta)cos(\theta) \\
+    \frac{1}{2}cos^2(\theta)sin^2(\theta)
+\end{pmatrix}
+\]
+This makes the line integral
+\[\int_{0}^{2\pi}\mathbb{F} \cdot dr 
+\qquad 
+=
+\qquad 
+\begin{pmatrix}
+    4cos(\theta)sin^2(\theta) \\
+    4sin(\theta)cos(\theta) \\
+    \frac{1}{2}cos^2(\theta)sin^2(\theta)
+\end{pmatrix}
+\cdot 
+\begin{pmatrix}
+-sin(\theta) \\ cos(\theta) \\ 0
+\end{pmatrix}
+\]
+Yielding two terms
+\[\int_{0}^{2\pi} -(4cos(\theta)sin^3(\theta)) + (4cos^3(\theta)sin(\theta))d\theta\]
+This will be split up into two integrals and then solved\\
+First term
+\[\int -(4cos(\theta)sin^3(\theta))d\theta\]
+\[
+\frac{d}{d\theta}sin(\theta) = cos(\theta),
+\qquad
+u = sin(\theta),
+\qquad
+\frac{du}{d\theta} = cos(\theta),
+\qquad
+du = cos(\theta)
+\]
+\[-4\int cos(\theta)d\theta sin^3(\theta) \Rightarrow -4\int u^3 du \Rightarrow -4 \frac{u^4}{4} + C = -sin^4(\theta) + C\]
+Second Term
+\[\int (4cos^3(\theta)sin(\theta))d\theta\]
+\[
+\frac{d}{d\theta} cos(\theta) = -sin(\theta),
+\qquad
+u = cos(\theta),
+\qquad
+du = -sin(\theta),
+\qquad
+sin(\theta)d\theta = -du
+\]
+\[4\int cos^3(\theta)sin(\theta)d\theta\ \Rightarrow 4\int u^3 (-du) \Rightarrow -4\frac{u^4}{4}+C = -cos^4(\theta) + C\]
+\[\left[-sin^4(\theta)-cos^4(\theta) \right]^{2\pi}_0 \Rightarrow (-sin^4(2\pi)-cos^4(2\pi)) - (-sin^4(0)-cos^4(0)) = (-0^4 - 1^4)-(-0^4-1^4) = (-1)-(-1) = 0\]
+
+
+%alternativt check lige den der vinkel med curl -> konservativt vektorfelt = 0
