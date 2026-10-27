@@ -33,6 +33,19 @@ This tells us that the vector field is \textit{Irrotational} and also convervati
 the field is defined everywhere in the space.  
 %theorem 3.1
 If a vector field $\mathbf{F}$ is convervative, then the corresponding scalar field $\phi$ is
-called the \text{potential} for $\textbf{F}$.
-\[\]
+called the \text{potential} for $\textbf{F}$. 
+The gradient consists of three partial derivates that must yield the vector field itself:
+\[
+\frac{\partial \phi}{\partial x} = 3x\\
+\qquad
+\frac{\partial \phi}{\partial y} = 2y\\
+\qquad
+\frac{\partial \phi}{\partial z} = -z\\
+\]
+integrate the first term with respect to x, however we need to introduce an arbitrary function g(y,z) to recover any
+lost information, even though in this particular case, the different terms are not coupled:
+\[\int \frac{\partial 3x}{\partial x} dx \Rightarrow \phi = \frac{3x^2}{2} + g(y,z)\]
+\[\int g(y,z) dy = 2\frac{1}{2}y^2 + h(z) = y^2 + h(z) \Rightarrow \phi = \frac{3x^2}{2} + y^2 + h(z)\]
+\[\int h(z) dz = -1\frac{1}{2}z^2  = -\frac{z^2}{2} + C\]
+\[\phi = \frac{3x^2}{2}  + y^2 -\frac{z^2}{2} + C \]
 \[\]
