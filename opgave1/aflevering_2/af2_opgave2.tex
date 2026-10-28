@@ -42,10 +42,35 @@ The gradient consists of three partial derivates that must yield the vector fiel
 \qquad
 \frac{\partial \phi}{\partial z} = -z\\
 \]
-integrate the first term with respect to x, however we need to introduce an arbitrary function g(y,z) to recover any
+Integrate the first term with respect to x, however we need to introduce arbitrary functions g(y,z) and h(z) during each integration, to recover any
 lost information, even though in this particular case, the different terms are not coupled:
 \[\int \frac{\partial 3x}{\partial x} dx \Rightarrow \phi = \frac{3x^2}{2} + g(y,z)\]
 \[\int g(y,z) dy = 2\frac{1}{2}y^2 + h(z) = y^2 + h(z) \Rightarrow \phi = \frac{3x^2}{2} + y^2 + h(z)\]
 \[\int h(z) dz = -1\frac{1}{2}z^2  = -\frac{z^2}{2} + C\]
 \[\phi = \frac{3x^2}{2}  + y^2 -\frac{z^2}{2} + C \]
 \[\]
+To find the flux flowing out of the unit sphere, the divergence theorem can be used. as it describes the flux:
+Here we transform the surface S into a solid sphere or ball \textit{B}, but this also requires a change to spherical coordinates:
+$(r, \theta, \phi)$
+\[\iint_{S^2} \mathbf{F} \cdot n dS = \iiint_B \nabla \cdot \mathbf{F} dV\]
+from ealier, the divergence was calculated:
+\[\nabla \cdot \mathbf{F} = 3 + 2 - 1 = 4\]
+This yields the integral:
+\[\iiint_B 4dV\]
+Where $dV = r^2 sin  \phi d\theta d\phi dr$, where the bounds of integration are defined as:
+\[
+0 \le r \le R,
+\qquad
+0 \le \phi \le \pi,
+\qquad
+0 \le \theta \le 2\pi
+\]
+\[\Phi = \int_{0}^{1}\int_{0}^{\pi}\int_{0}^{2\pi} 4r^2 sin \phi d\theta d\phi dr\]
+\[= \int_{0}^{2\pi} 4r^2 sin\phi d\theta \Rightarrow 4r^2 sin\phi\int_{0}^{2\pi} 1d\theta \Rightarrow 4r^2sin\phi \left[\theta\right]_0^{2\pi} = 4r^2sin\phi(2\pi - 0) = 8\pi r^2 sin\phi\]
+\[= \int_{0}^{\pi} 8\pi r^2 sin\phi d\phi \Rightarrow = 8\pi r^2 \int_{0}^{\pi} sin\phi d\phi \Rightarrow 8\pi r^2 \left[-cos\right]_0^\pi\] 
+\[\Rightarrow 8\pi r^2 ((-cos(\pi))-(-cos(0))) = 8\pi r^2 ((-(-1))-(-1)) = 16\pi r^2 \] 
+\[\Phi = \int_{0}^{1}16\pi r^2 dr \Rightarrow 16\pi \int_{0}^{1} r^2 dr \Rightarrow \left[\frac{16\pi}{3}r^3\right]_0^1 = \frac{16\pi}{3}\]
+\[\]
+\[\]
+
+%https://www.clinicalbiostats.com/tutorials/undergraduate-mathematics-calculus-iii/flux-through-spheres-using-the-divergence-theorem/
