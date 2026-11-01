@@ -32,3 +32,24 @@ This expression can be simplfied
 \[= -8\pi\]
 \[\]
 
+This can also be evalutated using Greens Theorem:
+\[\oint_C Pdx + Qdy = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA\]
+Here, here functions $Q$ and $P$ must firstly be identified from the given contour integral:
+\[P = (x+y) \qquad Q = (y-x), \qquad \frac{\partial Q}{\partial x} = -1\qquad \frac{\partial P}{\partial y} = 1\]
+Into green's theorem:
+\[\oint_C (x+y)dx + (y-x)dy = \iint_D (-1 -1) \ dA \Rightarrow \iint_D -2 \ dA\]
+The same bounds of integration can be derived by shifting into polar coordinates, and since this is still a circle it
+takes the same form as before:
+\[x = r \ cos(\theta),
+\qquad 
+y = r \ sin(\theta),
+\qquad
+\]
+And the bounds:
+\[0 \le r \le 2, \qquad 0 \le \theta \le 2\pi\]
+And:
+\[dA = r \ dr \ d\theta\]
+\[S = \int_{0}^{2\pi}\int_{0}^{2}-2r \ dr \ d\theta\]
+\[-2\int_{0}^{2}r \ dr \Rightarrow -2r^2 \Rightarrow \left[-2r^2\right]_0^2 = (-2^2) - (-0^2) = -4\]
+\[-4\int_{0}^{2\pi} \ d\theta \Rightarrow -4\theta \Rightarrow \left[-4\theta\right]_0^{2\pi} = (-4\cdot2\pi) - (-4\cdot 0)\]
+\[= -8\pi\]
