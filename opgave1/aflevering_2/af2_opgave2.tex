@@ -43,7 +43,7 @@ The gradient consists of three partial derivates that must yield the vector fiel
 \frac{\partial \phi}{\partial z} = -z\\
 \]
 Integrate the first term with respect to x, however we need to introduce arbitrary functions g(y,z) and h(z) during each integration, to recover any
-lost information, as we cannot be sure if the origianl fuction contained any terms relating to y and z.
+lost information, as we cannot be sure if the original function contained any terms relating to y and z.
 Because:
 \[\nabla\phi = 
 \begin{pmatrix}
@@ -65,21 +65,19 @@ Because:
 \frac{\partial \phi}{\partial z}    
 \end{pmatrix}
 \]
-This means that we must find some scalar function $\phi$, that when partial differentiated yields or vector field.
+This means that we must find some scalar function $\phi$, that when partial differentiated yields the vector field.
 As listed above, the three partials, we can start by integration the x component. 
 \[\int 3x \ dx \Rightarrow \phi = \frac{3x^2}{2} + g(y,z)\]
 If we differentiate $\phi$ for y, the x term goes away and we're left with:
 \[\frac{\partial \phi}{\partial y} = \frac{\partial}{\partial y} \left(\frac{3}{2}x^2 +g(y,z)\right) \Rightarrow \frac{\partial \phi}{\partial y} = \frac{\partial g(y,z)}{\partial y} = 2y \]
-Because from our definition from ealier, $\frac{\partial \phi}{\partial y} = 2y$. This can be integrated:
-\[\int g(y,z) \ dy = 2\frac{1}{2}y^2 + h(z) = y^2 + h(z) \Rightarrow \phi = \frac{3x^2}{2} + y^2 + h(z)\]
+And this partial derivate is integrated: 
+\[\int \frac{\partial g(y,z)}{\partial y} \ dy = y^2 + h(z) \Rightarrow \phi = \frac{3x^2}{2} + y^2 + h(z)\]
 Same process as before, if we differentiate $\phi$ for z, the x and y terms goes away, and we're left with:
 \[\frac{\partial \phi}{\partial z} = \frac{\partial}{\partial z} \left(\frac{3}{2}x^2 + y^2 + h(z)\right) \Rightarrow \frac{\partial \phi}{\partial z} = \frac{\partial h(z)}{\partial z} = -z\]
-Again, from our ealier definition of the partial derivative of z.
 Integrating this, becomes:
-\[\int h(z) \ dz = -1\frac{1}{2}z^2  = -\frac{z^2}{2} + C\]
+\[\int \frac{\partial h(z)}{\partial z} = -\frac{z^2}{2} + C\]
 And combining all the terms, yields the final expression:
 \[\phi = \frac{3x^2}{2}  + y^2 -\frac{z^2}{2} + C \]
-\[\]
 \\
 To find the flux flowing out of the unit sphere, the divergence theorem can be used. This relates the flux throught the surface
 to the volume integral of the divergence. Here we transform the surface S into a solid sphere or ball \textit{B}, but this also requires a change to spherical coordinates:

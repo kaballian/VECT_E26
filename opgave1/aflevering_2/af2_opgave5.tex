@@ -1,5 +1,5 @@
 \section{Exercise 5}
-\textit{Let $F$ be a vector field on $\mathbb{R}^3$ give by}
+\textit{Let $F$ be a vector field on $\mathbb{R}^3$ given by}
 \[F(x,y,z) =\frac{1}{3}(x^2,y^2,z^3)\]
 
 \textit{And let $C$ be the cube: $Cc= {(x,y,z) \in \mathbb{R}^3 | 0 \le x \le 1, 0 \le y \le 1, 0 \le z \le 1 }$}.
@@ -16,7 +16,7 @@ and then summed together.\\
 Any of the six surfaces can be described by four points on any of the given two planes,
 xy, xz, yz. For the ZY-plane, it will be bounded by four points: 
 \[A = (0,0,0), \qquad B = (0,1,0), \qquad C = (0,1,1), \qquad D = (0,0,1)\]
-This plane, which can also be called $x=0$ which is a side of the cube, is then the plane, which the flux will flow \textit{outwards} from,
+This plane, which can also be called $N_{x0}$ which is a side of the cube, is then the plane, which the flux will flow \textit{outwards} from,
 meaning the normal vector to this plane must in the opposite direction of the cubes \textit{depth}. This leads to the normal vector:
 \[N_{x0} = (-1,0,0)\] 
 This rationality can then be applied to the rest of the cube as well.
@@ -30,22 +30,39 @@ N_{z1} = (0,0,1), \qquad
 
 The flux through a single face(or surface) of the cube, is the bounded between 0 and 1 in any 
 direction, and because one point is fixed in place and we make minute changes in direction in the two others,
-in the case of $x=0$, $dS = dy \ dz$ describes the small steps we take calculate the flux. 
+in the case of $x=0$, $dS = dy \ dz$, describes the small steps we take. 
 So the flux becomes:
 
-\[\Phi_{x=0} = \int_{0}^{1}\int_{0}^{1} (0,y,z) \cdot (-1,0,0)\ dy \ dz \Rightarrow\frac{1}{3}(0, y^2, z^2) \cdot (-1,0,0) \Rightarrow \frac{1}{3} \left(0 \cdot (-1) + y^2\cdot0 + z^2\cdot 0\right) = 0  \]
-\[\Phi_{x=1} = \int_{0}^{1}\int_{0}^{1} (1,y,z) \cdot (1,0,0)\ dy \ dz \Rightarrow\frac{1}{3}(1, y^2, z^2) \cdot (1,0,0) \Rightarrow \frac{1}{3} \left(1 \cdot 1 + y^2\cdot0 + z^2\cdot 0\right) 
-\]\[\Rightarrow \frac{1}{3} \int_{0}^{1}\int_{0}^{1}dy \ dz \Rightarrow \frac{1}{3} \int_{0}^{1} \left[y\right]_0^1  \Rightarrow \frac{1}{3} \int_{0}^{1} 1 dz \Rightarrow \frac{1}{3} \left[z\right]_0^1 = \frac{1}{3} \]
+\[\Phi_{x=0} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(0,y,z) \cdot (-1,0,0)\ dy \ dz \Rightarrow\frac{1}{3}(0, y^2, z^2) \cdot (-1,0,0) \Rightarrow \frac{1}{3} \left(0 \cdot (-1) + y^2\cdot0 + z^2\cdot 0\right) = 0  \]
+\[\Phi_{x=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(1,y,z) \cdot (1,0,0)\ dy \ dz \Rightarrow  \Phi_{x=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(1, y^2, z^2) \cdot (1,0,0) \ dy \ dz \]
+\[\Rightarrow \Phi_{x=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3} \left(1 \cdot 1 + y^2\cdot0 + z^2\cdot 0\right) 
+\Rightarrow \frac{1}{3} \int_{0}^{1}\int_{0}^{1} \ dy \ dz \Rightarrow \]
+\[\frac{1}{3} \int_{0}^{1} \left[y\right]_0^1 \ dz  \Rightarrow \frac{1}{3} \int_{0}^{1} 1 \ dz \Rightarrow \frac{1}{3} \left[z\right]_0^1 = \frac{1}{3} \]
 
-\[\Phi_{y=0} = \int_{0}^{1}\int_{0}^{1} (x,0,z) \cdot (0,-1,0)\ dx \ dz \Rightarrow\frac{1}{3}(x^2, 0, z^2) \cdot (0,-1,0) \Rightarrow \frac{1}{3} \left(x^2 \cdot 0 + 0 \cdot (-1) + z^2\cdot 0\right) = 0  \]
-\[\Phi_{y=1} = \int_{0}^{1}\int_{0}^{1} (x,1,z) \cdot (0,1,0)\ dx \ dz \Rightarrow\frac{1}{3}(x^2, 1, z^2) \cdot (0,1,0) \Rightarrow \frac{1}{3} \left(x^2 \cdot 0 + 1\cdot 1 + z^2\cdot 0\right) = \frac{1}{3}  
-\]\[\Rightarrow \frac{1}{3} \int_{0}^{1}\int_{0}^{1}dx \ dz \Rightarrow \frac{1}{3} \int_{0}^{1} \left[x\right]_0^1 \Rightarrow \frac{1}{3} \int_{0}^{1} 1 dz \Rightarrow \frac{1}{3} \left[z\right]_0^1 = \frac{1}{3} \]
 
-\[\Phi_{z=0} = \int_{0}^{1}\int_{0}^{1} (x,y,0) \cdot (0,0,-1)\ dx \ dy \Rightarrow\frac{1}{3}(x^2, y^2, 0) \cdot (0,0,-1) \Rightarrow \frac{1}{3} \left(x^2 \cdot 0 + y^2 \cdot 0 + 0\cdot (-1)\right) = 0  \]
-\[\Phi_{z=1} = \int_{0}^{1}\int_{0}^{1} (x,y,1) \cdot (0,0,1)\ dx \ dy \Rightarrow\frac{1}{3}(x^2, y^2, 1) \cdot (0,0,1) \Rightarrow \frac{1}{3} \left(x^2 \cdot 0 + y^2\cdot 0 + 1\cdot 1\right) = \frac{1}{3} 
-\]\[\Rightarrow \frac{1}{3} \int_{0}^{1}\int_{0}^{1}dx \ dy \Rightarrow \frac{1}{3} \int_{0}^{1} \left[x\right]_0^1 \Rightarrow \frac{1}{3} \int_{0}^{1} 1 dy \Rightarrow \frac{1}{3} \left[y\right]_0^1 = \frac{1}{3} \]
+\[\Phi_{y=0} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(x,0,z) \cdot (0,-1,0)\ dx \ dz \Rightarrow\frac{1}{3}(x^2, 0, z^2) \cdot (0,-1,0) \Rightarrow \frac{1}{3} \left(x^2 \cdot 0 + 0 \cdot (-1) + z^2\cdot 0\right) = 0  \]
+\[\Phi_{y=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(x,1,z) \cdot (0,1,0)\ dx \ dz \Rightarrow \Phi_{y=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(x^2, 1, z^2) \cdot (0,1,0) \ dx \ dz \]
+\[\Rightarrow \Phi_{y=1} = \int_{0}^{1}\int_{0}^{1}\frac{1}{3} \left(x^2 \cdot 0 + 1\cdot 1 + z^2\cdot 0\right)  
+\Rightarrow \frac{1}{3} \int_{0}^{1}\int_{0}^{1} \ dx \ dz \Rightarrow \]
+\[\frac{1}{3} \int_{0}^{1} \left[x\right]_0^1 \ dz \Rightarrow \frac{1}{3} \int_{0}^{1} 1 dz \Rightarrow \frac{1}{3} \left[z\right]_0^1 = \frac{1}{3} \]
+
+
+
+
+\[\Phi_{z=0} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(x,y,0) \cdot (0,0,-1)\ dx \ dy \Rightarrow\frac{1}{3}(x^2, y^2, 0) \cdot (0,0,-1) \Rightarrow \frac{1}{3} \left(x^2 \cdot 0 + y^2 \cdot 0 + 0\cdot (-1)\right) = 0  \]
+\[\Phi_{z=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(x,y,1) \cdot (0,0,1)\ dx \ dy \Rightarrow \Phi_{z=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(x^2, 1, z^2) \cdot (0,0,1) \ dx \ dy \]
+\[\Rightarrow \Phi_{z=1} = \int_{0}^{1}\int_{0}^{1}\frac{1}{3} \left(x^2 \cdot 0 + y^2\cdot 0 + 1\cdot 1\right)  
+\Rightarrow \frac{1}{3} \int_{0}^{1}\int_{0}^{1} \ dx \ dy \Rightarrow \]
+\[\frac{1}{3} \int_{0}^{1} \left[x\right]_0^1 \ dy \Rightarrow \frac{1}{3} \int_{0}^{1} 1 dy \Rightarrow \frac{1}{3} \left[y\right]_0^1 = \frac{1}{3} \]
+
+
+
+
+
+% \[\Phi_{z=1} = \int_{0}^{1}\int_{0}^{1} \frac{1}{3}(x,y,1) \cdot (0,0,1)\ dx \ dy \Rightarrow\frac{1}{3}(x^2, y^2, 1) \cdot (0,0,1) \Rightarrow \frac{1}{3} \left(x^2 \cdot 0 + y^2\cdot 0 + 1\cdot 1\right) = \frac{1}{3} 
+% \]\[\Rightarrow \frac{1}{3} \int_{0}^{1}\int_{0}^{1}dx \ dy \Rightarrow \frac{1}{3} \int_{0}^{1} \left[x\right]_0^1 \Rightarrow \frac{1}{3} \int_{0}^{1} 1 dy \Rightarrow \frac{1}{3} \left[y\right]_0^1 = \frac{1}{3} \]
 This yields the final calculation for the flux out of the cube as:
-\[\Phi_C =\Phi_{x=0} + \Phi_{x=1} + \Phi_{y=0} + \Phi_{y=1} + \Phi_{z=0} + \Phi_{z=1} = \frac{1}{3} + \frac{1}{3} + \frac{1}{3} = 1 \]
+\[\Phi =\Phi_{x=0} + \Phi_{x=1} + \Phi_{y=0} + \Phi_{y=1} + \Phi_{z=0} + \Phi_{z=1} = \frac{1}{3} + \frac{1}{3} + \frac{1}{3} = 1 \]
 \\
 Alternatively, this can be calculated using the divergence (or Gauss theorem). It essentially states that we can, by deriving the divergence
 inside the enclosed space of the cube, see how much our vector fields behave like a source or a sink at each point inside it, and then sum all those 
@@ -65,8 +82,8 @@ The divergence can be found, as the sum of all the partial derivatives
 \Rightarrow
 \frac{2}{3}(x+y+z)
 \]
-The bounds of integration are the same as before, outline by the bounds of the cube.
-\[\Phi_C = \int_{0}^{1}\int_{0}^{1}\int_{0}^{1} \frac{2}{3}(x+y+z) \ dx \ dy \ dz \]
-\[\Rightarrow \int_{0}^{1} (x+y+z) dx \Rightarrow \left[\frac{y^2}{2} + xy + xz\right]_0^1 = \left(\frac{1}{2} + y + z\right)\]
-\[\Rightarrow \int_{0}^{1} \left(\frac{1}{2} + y + z\right) \Rightarrow \left[\frac{y}{2} + \frac{y^2}{2} + yz\right]_0^1 =\left(1+z\right) \]
+The bounds of integration are now the three dimensional volume of the cube from 0 to 1.
+\[\Phi = \int_{0}^{1}\int_{0}^{1}\int_{0}^{1} \frac{2}{3}(x+y+z) \ dx \ dy \ dz \]
+\[\Rightarrow \int_{0}^{1} (x+y+z) dx \Rightarrow \frac{2}{3}\left[\frac{x^2}{2} + xy + xz\right]_0^1 =\frac{2}{3}\left(\frac{1}{2}  + (1)y + (1)z\right) =\frac{2}{3}\left(\frac{1}{2} + y + z\right)\]
+\[\Rightarrow \frac{2}{3}\int_{0}^{1} \left(\frac{1}{2} + y + z\right) \Rightarrow \frac{2}{3}\left[\frac{y}{2} + \frac{y^2}{2} + yz\right]_0^1 =\frac{2}{3}\left(1+z\right) \]
 \[\Rightarrow \frac{2}{3}\int_{0}^{1} \left(1+z\right) = \frac{2}{3}\left[z+\frac{z^2}{2}\right]_0^1 = \frac{2}{3}\left(1+\frac{1}{2}\right) = \frac{2}{3} \cdot \frac{3}{2} = 1\]
