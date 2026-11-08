@@ -8,7 +8,7 @@
 %example 2.10 kan bruges her
 
 Because x and y is defined as a unit circle in C, with a constant Z value, this can be
-rewritte as using polar coordinates, which becomes
+rewritte as a parameterization of the unit circle. 
 \[x = cos(\theta),
 \qquad 
 y = sin(\theta),
@@ -17,20 +17,23 @@ y = sin(\theta),
 This changes the bound of integration to:
 \[
 \int_{0}^{2\pi}\]
-
+Because of this change, a position vector is also created
 \[r(\theta) = 
 \begin{pmatrix}
 cos(\theta) \\ sin(\theta) \\ 4
 \end{pmatrix}
 \]
-And F can also be rewritte in terms of parameter $\theta$ as $\textbf{dr}$, where:
-\[dr(\theta) = 
+In order to calculate the integral, $r(\theta)$ must be differentiated. This reflects the change in direction
+due to any changes of position along the curve.
+\[r'(\theta) = 
 \begin{pmatrix}
 -sin(\theta) \\ cos(\theta) \\ 0
 \end{pmatrix}\]
-which makes $F(dr(\theta))$
+Multiplying $r'(\theta)$ by any infitisimal change, yields the displacement vector:
+\[dr=r'(\theta) \ d\theta\]
+The position vector, can then be plugged into the equation for the vector field, yielding: $F(r(\theta))$
 \[
-F(dr(\theta)) = 
+F(r(\theta)) = 
 \begin{pmatrix}
     4cos(\theta)sin^2(\theta) \\
     4sin(\theta)cos(\theta) \\
@@ -41,7 +44,10 @@ This makes the line integral
 \[\int_{0}^{2\pi}\mathbb{F} \cdot dr 
 \qquad 
 =
-\qquad 
+\int_{0}^{2\pi} F(r(\theta)) \cdot r'(\theta) \ d\theta
+\qquad
+=
+\qquad
 \begin{pmatrix}
     4cos(\theta)sin^2(\theta) \\
     4sin(\theta)cos(\theta) \\
@@ -51,6 +57,7 @@ This makes the line integral
 \begin{pmatrix}
 -sin(\theta) \\ cos(\theta) \\ 0
 \end{pmatrix}
+\ d\theta
 \]
 Yielding two terms
 \[\int_{0}^{2\pi} -(4cos(\theta)sin^3(\theta)) + (4cos^3(\theta)sin(\theta))d\theta\]
@@ -78,8 +85,13 @@ du = -sin(\theta),
 \qquad
 sin(\theta)d\theta = -du
 \]
-\[4\int cos^3(\theta)sin(\theta)d\theta\ \Rightarrow 4\int u^3 (-du) \Rightarrow -4\frac{u^4}{4}+C = -cos^4(\theta) + C\]
+\[4\int cos^3(\theta) \ sin(\theta) \ d\theta\ \Rightarrow 4\int u^3 (-du) \Rightarrow -4\frac{u^4}{4}+C = -cos^4(\theta) + C\]
 \[\left[-sin^4(\theta)-cos^4(\theta) \right]^{2\pi}_0 \Rightarrow (-sin^4(2\pi)-cos^4(2\pi)) - (-sin^4(0)-cos^4(0)) = (-0^4 - 1^4)-(-0^4-1^4) = (-1)-(-1) = 0\]
-
+\\
 
 %alternativt check lige den der vinkel med curl -> konservativt vektorfelt = 0
+This could also be solved using Stokes theorem
+\[\oint_C \mathbb{F} \cdot dr = \iint_S (\nabla \times \mathbf{F}) \cdot \mathbf{n} \ dS\]
+\[\]
+\[\]
+\[\]

@@ -43,33 +43,68 @@ The gradient consists of three partial derivates that must yield the vector fiel
 \frac{\partial \phi}{\partial z} = -z\\
 \]
 Integrate the first term with respect to x, however we need to introduce arbitrary functions g(y,z) and h(z) during each integration, to recover any
-lost information, even though in this particular case, the different terms are not coupled:
-\[\int \frac{\partial 3x}{\partial x} dx \Rightarrow \phi = \frac{3x^2}{2} + g(y,z)\]
-\[\int g(y,z) dy = 2\frac{1}{2}y^2 + h(z) = y^2 + h(z) \Rightarrow \phi = \frac{3x^2}{2} + y^2 + h(z)\]
-\[\int h(z) dz = -1\frac{1}{2}z^2  = -\frac{z^2}{2} + C\]
+lost information, as we cannot be sure if the origianl fuction contained any terms relating to y and z.
+Because:
+\[\nabla\phi = 
+\begin{pmatrix}
+\frac{\partial \phi}{\partial x}\\    
+\frac{\partial \phi}{\partial y}\\
+\frac{\partial \phi}{\partial z}    
+\end{pmatrix},
+\qquad
+\textit{and}
+\qquad
+\nabla\phi = \mathbf{F}
+\qquad
+\Rightarrow
+\qquad
+\mathbf{F} =
+\begin{pmatrix}
+\frac{\partial \phi}{\partial x}\\    
+\frac{\partial \phi}{\partial y}\\
+\frac{\partial \phi}{\partial z}    
+\end{pmatrix}
+\]
+This means that we must find some scalar function $\phi$, that when partial differentiated yields or vector field.
+As listed above, the three partials, we can start by integration the x component. 
+\[\int 3x \ dx \Rightarrow \phi = \frac{3x^2}{2} + g(y,z)\]
+If we differentiate $\phi$ for y, the x term goes away and we're left with:
+\[\frac{\partial \phi}{\partial y} = \frac{\partial}{\partial y} \left(\frac{3}{2}x^2 +g(y,z)\right) \Rightarrow \frac{\partial \phi}{\partial y} = \frac{\partial g(y,z)}{\partial y} = 2y \]
+Because from our definition from ealier, $\frac{\partial \phi}{\partial y} = 2y$. This can be integrated:
+\[\int g(y,z) \ dy = 2\frac{1}{2}y^2 + h(z) = y^2 + h(z) \Rightarrow \phi = \frac{3x^2}{2} + y^2 + h(z)\]
+Same process as before, if we differentiate $\phi$ for z, the x and y terms goes away, and we're left with:
+\[\frac{\partial \phi}{\partial z} = \frac{\partial}{\partial z} \left(\frac{3}{2}x^2 + y^2 + h(z)\right) \Rightarrow \frac{\partial \phi}{\partial z} = \frac{\partial h(z)}{\partial z} = -z\]
+Again, from our ealier definition of the partial derivative of z.
+Integrating this, becomes:
+\[\int h(z) \ dz = -1\frac{1}{2}z^2  = -\frac{z^2}{2} + C\]
+And combining all the terms, yields the final expression:
 \[\phi = \frac{3x^2}{2}  + y^2 -\frac{z^2}{2} + C \]
 \[\]
-To find the flux flowing out of the unit sphere, the divergence theorem can be used. as it describes the flux:
-Here we transform the surface S into a solid sphere or ball \textit{B}, but this also requires a change to spherical coordinates:
+\\
+To find the flux flowing out of the unit sphere, the divergence theorem can be used. This relates the flux throught the surface
+to the volume integral of the divergence. Here we transform the surface S into a solid sphere or ball \textit{B}, but this also requires a change to spherical coordinates:
 $(r, \theta, \phi)$
-\[\iint_{S^2} \mathbf{F} \cdot n dS = \iiint_B \nabla \cdot \mathbf{F} dV\]
+\[\iint_{S^2} \mathbf{F} \cdot \mathbf{n} \ dS = \iiint_B \nabla \cdot \mathbf{F} \ dV\]
 from ealier, the divergence was calculated:
 \[\nabla \cdot \mathbf{F} = 3 + 2 - 1 = 4\]
 This yields the integral:
-\[\iiint_B 4dV\]
-Where $dV = r^2 sin  \phi d\theta d\phi dr$, where the bounds of integration are defined as:
+\[\iiint_B 4 \ dV = \int_{0}^{1}\int_{0}^{\pi}\int_{0}^{2\pi} 4r^2 sin(\phi) \ d\theta \ d\phi \ dr\]
+Where $dV = r^2 sin(\phi) \ d\theta \ d\phi \ dr$, where the bounds of integration are defined as:
 \[
-0 \le r \le R,
+0 \le r \le 1,
 \qquad
 0 \le \phi \le \pi,
 \qquad
 0 \le \theta \le 2\pi
 \]
-\[\Phi = \int_{0}^{1}\int_{0}^{\pi}\int_{0}^{2\pi} 4r^2 sin \phi d\theta d\phi dr\]
-\[= \int_{0}^{2\pi} 4r^2 sin\phi d\theta \Rightarrow 4r^2 sin\phi\int_{0}^{2\pi} 1d\theta \Rightarrow 4r^2sin\phi \left[\theta\right]_0^{2\pi} = 4r^2sin\phi(2\pi - 0) = 8\pi r^2 sin\phi\]
-\[= \int_{0}^{\pi} 8\pi r^2 sin\phi d\phi \Rightarrow = 8\pi r^2 \int_{0}^{\pi} sin\phi d\phi \Rightarrow 8\pi r^2 \left[-cos\right]_0^\pi\] 
+% \[\Phi = \int_{0}^{1}\int_{0}^{\pi}\int_{0}^{2\pi} 4r^2 sin(\phi) \ d\theta \ d\phi \ dr\]
+First integral:
+\[= \int_{0}^{2\pi} 4r^2 sin(\phi) \ d\theta \Rightarrow 4r^2 sin(\phi) \ \int_{0}^{2\pi} 1 \ d\theta \Rightarrow 4r^2sin(\phi) \left[\theta\right]_0^{2\pi} = 4r^2sin(\phi)(2\pi - 0) = 8\pi r^2 sin(\phi)\]
+Second integral:
+\[= \int_{0}^{\pi} 8\pi r^2 sin(\phi) \  d\phi \Rightarrow 8\pi r^2 \int_{0}^{\pi} sin(\phi) \ d\phi \Rightarrow 8\pi r^2 \left[-cos\right]_0^\pi\] 
 \[\Rightarrow 8\pi r^2 ((-cos(\pi))-(-cos(0))) = 8\pi r^2 ((-(-1))-(-1)) = 16\pi r^2 \] 
-\[\Phi = \int_{0}^{1}16\pi r^2 dr \Rightarrow 16\pi \int_{0}^{1} r^2 dr \Rightarrow \left[\frac{16\pi}{3}r^3\right]_0^1 = \frac{16\pi}{3}\]
+Last and outer Integral
+\[= \int_{0}^{1}16\pi r^2 \ dr \Rightarrow 16\pi \int_{0}^{1} r^2 \ dr \Rightarrow \left[\frac{16\pi}{3}r^3\right]_0^1 = \frac{16\pi}{3}\]
 \[\]
 \[\]
 
