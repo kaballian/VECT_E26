@@ -6,27 +6,29 @@
     \item Calculate the line integral using Greens Theorem
 \end{itemize}
 
-To compute this integral, C can firstly be rearranged:
-\[C = x^2+y^2 -2x = 3 \Rightarrow  x^2-2x +y^2 = 3 \Rightarrow (x-1)^2 + y^2 = 4\]
+To compute this integral, C can firstly be rearranged, this is done by completing the square $(x-1)^2$:
+\[C = x^2 + y^2 -2x = 3 \Rightarrow x^2 -2x + y^2 = 3 \Rightarrow x^2 - 2x + 1 + y^2  = 3 + 1 \Rightarrow (x-1)^2 + y^2 = 4 \]
 This is an equation for a cicle, as it takes the form $x^2+y^2=r^2$ with a center in $\left[1,0\right]$ and $r = 2$. Because this is
 in the positive orientation, that means the rotation is counter-clockwise, therefore the standard parameterization is:
 \[x^2+y^2 = r^2 
 \qquad
 \Rightarrow 
 \qquad
-x = r \ cos(t),
+x(t) = 1 + 2 \ cos(t),
 \qquad 
-y = r \ sin(t),
+y(t) = 2 \ sin(t),
 \qquad
 0 \le t \le 2\pi\]
+The $+1$ in the x term is added because the circle is centered at $(1,0)$
 These can now be differentiated so that everything can be expressed in term of t:
-\[\frac{dt}{dx}=-r \ sin(t) \qquad \frac{dt}{dy} = r \ cos(t)\]
-\[S = \oint_C (x+y)dx + (y-x)dy \Rightarrow \int_{0}^{2\pi} (1+2cos(t)+2sin(t))(-2sin(t))dt + (2sin(t) - 1 + cos(t))(2cos(t))dt\]
+\[\frac{dx}{dt} =-2 \ sin(t) \qquad \frac{dy}{dt} = 2 \ cos(t)\]
+Everything can then be substituted into the line integral:
+\[S = \oint_C (x+y) \ dx + (y-x) \ dy \Rightarrow \int_{0}^{2\pi} (1+2cos(t)+2sin(t))\cdot(-2sin(t)) \ dt + (2sin(t) - 1 + cos(t)) \cdot (2cos(t)) \ dt\]
 This expression can be simplfied
-\[(-2)sin(t)-4sin(t) \ cos(t) - 4sin^2(t) + 4sin(t) \ cos(t) - 2cos(t) - 4cos^2(t)\]
-\[(-2)sin(t)-2cos(t)-4(sin^2(t)+cos^2(t))\]
-\[(-2)(sin(t) + cos(t)-4)\]
-\[\int_{0}^{2\pi} \left[(-2)(sin(t)+cos(t))-4\right] dt \Rightarrow (-2)\int sin(t) dt - 2\int cos(t)dt -4\int dt \]
+\[= (-2)sin(t)-4sin(t) \ cos(t) - 4sin^2(t) + 4sin(t) \ cos(t) - 2cos(t) - 4cos^2(t)\]
+\[= (-2)(sin(t)-2cos(t)-4)(sin^2(t)+cos^2(t))\]
+\[= (-2)(sin(t) + cos(t)-4)\]
+\[\Rightarrow \int_{0}^{2\pi} \left[(-2)(sin(t)+cos(t))-4\right] dt \Rightarrow (-2)\int sin(t) dt - 2\int cos(t)dt -4\int dt \]
 \[\left[2cos(t) - 2sin(t) -4t\right]_0^{2\pi} \Rightarrow (2cos(2\pi) - 2sin(2\pi) -4(2\pi)) - (2cos(0) - 2sin(0) -4(0))\]
 \[= 2 \cdot 1 - 0 - 8\pi - 2 \cdot 1 - 0 - 0 \]
 \[= -8\pi\]
@@ -35,7 +37,7 @@ This expression can be simplfied
 This can also be evalutated using Greens Theorem:
 \[\oint_C Pdx + Qdy = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA\]
 Here, here functions $Q$ and $P$ must firstly be identified from the given contour integral:
-\[P = (x+y) \qquad Q = (y-x), \qquad \frac{\partial Q}{\partial x} = -1\qquad \frac{\partial P}{\partial y} = 1\]
+\[P = (x+y), \qquad Q = (y-x), \qquad \frac{\partial Q}{\partial x} = -1\qquad \frac{\partial P}{\partial y} = 1\]
 Into green's theorem:
 \[\oint_C (x+y)dx + (y-x)dy = \iint_D (-1 -1) \ dA \Rightarrow \iint_D -2 \ dA\]
 The same bounds of integration can be derived by shifting into polar coordinates, and since this is still a circle it
@@ -49,7 +51,8 @@ And the bounds:
 \[0 \le r \le 2, \qquad 0 \le \theta \le 2\pi\]
 And:
 \[dA = r \ dr \ d\theta\]
+Evaluating the integral:
 \[S = \int_{0}^{2\pi}\int_{0}^{2}-2r \ dr \ d\theta\]
-\[-2\int_{0}^{2}r \ dr \Rightarrow -2r^2 \Rightarrow \left[-2r^2\right]_0^2 = (-2^2) - (-0^2) = -4\]
+\[-2\int_{0}^{2}r \ dr \Rightarrow -2\frac{1}{2}r^2 \Rightarrow \left[-(r^2)\right]_0^2 = (-(2)^2) - (-(0)^2) = -4\]
 \[-4\int_{0}^{2\pi} \ d\theta \Rightarrow -4\theta \Rightarrow \left[-4\theta\right]_0^{2\pi} = (-4\cdot2\pi) - (-4\cdot 0)\]
 \[= -8\pi\]
