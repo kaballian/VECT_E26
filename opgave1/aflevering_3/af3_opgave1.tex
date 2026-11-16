@@ -1,0 +1,165 @@
+\section{Exercise 1}
+\textit{Consider the two lines $l$ and $m$ in $\mathbb{R}^3$ given by:}
+\[l = \{(1 +2t, -1+4t,2+3t) \in \mathbb{R}^3 | t \in \mathbb{R}\}\]
+\[m = \{(1-s,1+2s,4s)\in \mathbb{R}^3 | s \in \mathbb{R}\}\]
+
+\begin{itemize}
+    \item Argue i and m are NOT parallel, using the cross-product
+    \item Write down a function of (t,s) that outputs the square distance between a point on l and a point m and use this function to find the minimum distance between the two lines
+\end{itemize}
+
+l and m can be written down as a starting point and a direction vector:
+\[l(t) = 
+\begin{pmatrix}
+    1\\
+    -1\\
+    2
+\end{pmatrix}
++ t
+\begin{pmatrix}
+    2\\
+    4\\
+    3
+\end{pmatrix},
+\qquad
+m(s) = 
+\begin{pmatrix}
+    1\\
+    1\\
+    0
+\end{pmatrix}
++ s 
+\begin{pmatrix}
+    -1\\
+    2\\
+    4
+\end{pmatrix}
+\]
+By taking the cross product of the direction vectors, if this is $\neq 0$ then they are nonparallel
+
+\[
+l'(t) = \begin{pmatrix}
+    2\\ 4\\ 3
+\end{pmatrix}, \qquad
+m'(s) = \begin{pmatrix}
+    -1\\2\\4
+\end{pmatrix}
+\]
+\[
+l'(t) \times m'(s) = 
+\begin{vmatrix}
+    i&j&k\\
+    2&4&3\\
+    -1&2&4
+\end{vmatrix}
+\Rightarrow
+\begin{pmatrix}
+    4\cdot4-2\cdot3\\
+    2\cdot4-(-1)\cdot3\\
+    2\cdot2-(-1)\cdot4
+\end{pmatrix}
+=
+\begin{pmatrix}
+    10\\
+    11\\
+    8
+\end{pmatrix}
+\]
+Since $\begin{pmatrix} 10\\11\\8 \end{pmatrix}$ is
+not a zero vector, then they are not parallel.
+
+To solve this, it is required to build a distance function with two inputs.
+This distance function consists of a vector that points from one vector to the other, 
+then finding the distance, then squaring it.
+
+\[d(t,s) = l(t) - m(s) = 
+\begin{pmatrix}
+    (1+2t) - (1-s)\\
+    (-1+4t) - (1+2s)\\
+    (2+3t)-4s
+\end{pmatrix}\]
+
+The squared distance is then:
+\[d(t,s) = |l(t) - m(s)|^2\]
+\[\Downarrow\]
+\[d(t,s) = (2t+s)^2 + (-2+4t-2s)^2 + (2+3t-4s)^2\]
+To find the minimum a minimum, the goal is to find a minimum, where small changes in either t or s, is zero, such that:
+\[
+\frac{\partial d(t,s)}{\partial t} = 0, \qquad
+\frac{\partial d(t,s)}{\partial s} = 0
+\]
+The distance expression, can then be partial differentiated to seek this minimum.
+This requires the chain rule: $(g(x))^2 = 2\left(g(x)\right)g'(x)$.
+\[
+\frac{\partial d(t,s)}{\partial t} 
+\begin{pmatrix}
+    (2t+s)^2 \\
+    (-2+4t-2s)^2 \\
+    (2+3t-4s)^2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+    2(2t+s)(2)\\
+    2\left((-2)+4t-2s\right)(4)\\
+    2(2+3t-4s)(3)
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+    8t+4s\\
+    32t-16s-16\\
+    18t-24s+12
+\end{pmatrix}
+\]
+This expression is then summed together
+\[
+\frac{\partial d(t,s)}{\partial t} =
+8t+4s + 32t-16s-16 + 18t-24s+12 = 58t-36s-4
+\]
+The same is done for the partial derivative of d with respect to s.
+\[
+\frac{\partial d(t,s)}{\partial s} 
+\begin{pmatrix}
+    (2t+s)^2 \\
+    (-2+4t-2s)^2 \\
+    (2+3t-4s)^2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+    2(2t+s)(1)\\
+    2\left((-2)+4t-2s\right)(-2)\\
+    2(2+3t-4s)(-4)
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+    4t+2s\\
+    -16t+8s+8\\
+    -24t+32s-16
+\end{pmatrix}
+\]
+Summed together:
+\[
+\frac{\partial d(t,s)}{\partial s} =
+-36t+42s-8
+\]
+Earlier it was stated the intention is to find the place where the
+gradient of the partials is equal to zero, thus, these two equations can
+be set equal to zero and placed as a system of two equations with
+two unknown, to solve for t and s.
+\[
+\begin{cases}
+    58t-36s=4 \\
+    -36t+42s=8
+\end{cases}
+\]
+Using a CAS tool, this can be used to isolate s in one equation
+and substitute that into the other yielding:
+\[
+\begin{cases}
+    t = \frac{2}{5}\\
+    s = \frac{8}{15}
+\end{cases}
+\]
+These value are substituted into the expression for the squared
+distance function, and then taken the square root of that expression
+to yield the minimum distance, using a CAS tool:
+\[\sqrt{d(t,s)} = \sqrt{d\left(\frac{2}{5}, \frac{8}{15}\right)} \approx 2.251 \]
