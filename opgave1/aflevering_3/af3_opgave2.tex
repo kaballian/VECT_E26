@@ -1,0 +1,103 @@
+\section{Exercise 2}
+\textit{let $T$ be the triangle in $\mathbb{R}^2$ with vertices (1,0), (0,1) and (-1,0) traversed 
+counterclockwise. Also let $F$ be the vector field:$F(x,y) = (e^y, sin(\pi x))$ and $S$ the line integral:}
+\[S = \oint_T F \cdot dr\]
+\begin{itemize}
+    \item Calculate the line integral S directly
+    \item Calculate the line integral S using Greens Theorem
+\end{itemize}
+
+To evaluate this integral, the bound of integration must fist be defined.
+This since is a triangle, in the counterclockwise direction, three line segments can be defined, 
+from the given three points:
+\[P_1=(1,0),\qquad P_2=(0,1),\qquad P_3=(-1,0),\qquad
+C_1 = P_2 - P_1, \qquad C_2 = P_3-P_2, \qquad C_3 = P_1-P_3\]
+This can written as a direction vector: $r(t) = P+t(Q-P)$ where P is the origin 
+point and Q is the ending point. Then the vector equations can be split up into
+the x and y components. Also note that t is bounded by $0\le t \le 1$:
+%vect 1
+\[
+r_{C_1}(t) = P_1 +t(P_2 - P_1) \Rightarrow 
+\begin{pmatrix} 
+    1\\
+    0 
+\end{pmatrix}
++t
+\begin{pmatrix}
+    0-1\\
+    1-0
+\end{pmatrix} 
+= 
+\begin{pmatrix} 
+    1\\
+    0 
+\end{pmatrix}+
+t
+\begin{pmatrix}
+    -1\\
+    1
+\end{pmatrix},
+\qquad r'_{C_1}(t) =
+\begin{pmatrix}
+    -1\\
+    1
+\end{pmatrix}
+\]
+%vect 2
+\[
+r_{C_2}(t) = P_2 +t(P_3 - P_2) \Rightarrow 
+\begin{pmatrix} 
+    0\\
+    1 
+\end{pmatrix}
++t
+\begin{pmatrix}
+    -1-0\\
+    0-1
+\end{pmatrix} 
+= 
+\begin{pmatrix} 
+    0\\
+    1 
+\end{pmatrix}+
+t
+\begin{pmatrix}
+    -1\\
+    -1
+\end{pmatrix},
+\qquad r'_{C_2}(t) = 
+\begin{pmatrix}
+    -1\\
+    -1
+\end{pmatrix}
+\]
+%vect 3
+\[
+r_{C_3}(t) = P_3 +t(P_1 - P_3) \Rightarrow 
+\begin{pmatrix} 
+    -1\\
+    0 
+\end{pmatrix}
++t
+\begin{pmatrix}
+    1-(-1)\\
+    0-0
+\end{pmatrix} 
+= 
+\begin{pmatrix} 
+    -1\\
+    0 
+\end{pmatrix}+
+t
+\begin{pmatrix}
+    2\\
+    0
+\end{pmatrix},
+\qquad r'_{C_3}(t) =
+\begin{pmatrix}
+    2\\
+    0
+\end{pmatrix}
+\]
+The integral then becomes the sum of the each of the integrals:
+\[\oint_C \mathbf{F} \cdot dr = \sum_{i=1}^{3} \int_{0}^{1} F(r_{C_i}(t))\cdot r'_{C_i}(t)\]
