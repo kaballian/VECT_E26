@@ -35,9 +35,36 @@ y(1-e^{xy})\\
 z
 \end{pmatrix}
 \]
-\[\]
-\[\]
-\[\]
-\[\]
-\[\]
+Since there is local rotation, as in the curl is $\neq0$ , no function $\phi$
+exists on $\mathbb{R}^2$.\\
+Next it is possible to evaluate the integral $S$ using stokes theorem,
+which states that a line closed integral on this form can be expressed as a 
+double integal of the curl. The addition of the factor $n$, the normal
+vector to the surface of the circle (or disk), which is perpendicular to its 
+surface. And because we're oriented closewise, and viewed downwards (from above), that
+normal vector becomes $n=(0,0,-1)$
+\[S=\oint_C F \cdot dr = \iint_s (\nabla \times \mathbf{F}) \  n \ dS\]
+Evaluation of the integrant:
+\[(\nabla \times \mathbf{F}) n = 
+\begin{pmatrix}
+x(e^{xy}-2)\\
+y(1-e^{xy})\\
+z
+\end{pmatrix}
+\cdot 
+\begin{pmatrix}
+    0\\
+    0\\
+    -1
+\end{pmatrix}
+= x(e^{xy}-2)(0) + y(1-e^{xy})(0) + z(-1) 
+=-5 \]
+In this case, the integration is around of a circle, this makes the bounds: 
+\[r^2 = 1,\qquad 0\le r \le1, \qquad 0\le \theta \le 2\pi\]
+So outer integral sums every angle $\theta$ for every $r$, leading to:
+\[\int_{0}^{1}\int_{0}^{2\pi}-5r \ d\theta \ dr \Rightarrow -5r \int_{0}^{1}\int_{0}^{2\pi} \ d\theta \ dr\] 
+Inner integral:
+\[-5r\int_{0}^{2\pi} \ d\theta = \left[-5r \ \theta\right]_0^{2\pi} = -10\pi r\]
+Outer integral:
+\[-10\pi \ \int_{0}^{1} r \ dr \Rightarrow \left[-10\pi \ \frac{1}{2}r^2\right]_0^1 = \left[-5\pi \ r^2 \right]_0^1 = -5\pi \]
 \[\]
