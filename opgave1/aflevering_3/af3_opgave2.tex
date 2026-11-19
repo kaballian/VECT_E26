@@ -117,12 +117,13 @@ This can also be calculated using greens theorem:
 selecting functions as:
 \[P(x,y) = e^y,\qquad Q(x,y) = sin(\pi x)\]
 \[\frac{\partial Q}{\partial x} = sin(\pi x) \Rightarrow \pi cos(\pi x), \qquad \frac{\partial P}{\partial y} = e^y \Rightarrow e^y \]
-\[\iint (\pi cos(\pi x)) - e^y dA\]
+\[\iint_T (\pi cos(\pi x)) - e^y dA\]
 Slicing this as a horizontal area, the boundaries become:
 \[y\in[0,1], \qquad \textit{left:} \ a = y-1, \qquad \textit{right} \  b=y+1\]
 \[\int_{0}^{1}\int_{y-1}^{1-y} \pi \ cos(\pi x) - e^y \ dx \ dy\]
 Evaluation of inner integral: 
 \[\int_{y-1}^{1-y}\pi \ cos(\pi x)-e^y \ dx \Rightarrow \left[sin(\pi x) - x \ e^y\right]_{y-1}^{1-y} = \left(sin(\pi(1-y)) - (1-u)e^y\right)- \left(sin(\pi(y-1))-(y-1)e^y\right)\]
+And outer integral:
 \[\int_{0}^{1}2 sin(\pi y) - 2(1-y)e^y dy \Rightarrow \left[-\frac{2}{\pi}cos(\pi y) - e^y(4-2y)\right]_0^1
 \]
 \[=\left(-\frac{2}{\pi}cos(\pi)-e^1(4-2)\right)-(-\frac{2}{\pi}cos(0)-e^0(4-0))\]
