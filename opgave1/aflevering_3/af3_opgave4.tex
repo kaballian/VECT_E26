@@ -1,0 +1,28 @@
+\section{Exercise 4}
+\textit{Calculate the flux $F$ out of $C$, where $F$ is the vector field of $\mathbb{R}^3$ given 
+by: $F(x,y,z) = (3xy^2, xe^z, z^3)$, and let $S$ be the boundary of
+$C = \{(x,y,z) \in \mathbb{R}^3 | y^2 + z^2 = 1, -1 \le x \le 2\}$}\\
+
+The flux can be Calculated using Gauss theorem
+\[\iint_S \mathbf{F} \cdot \mathbf{n} \ dS = \iiint_V \nabla \cdot \mathbf{F} \ dV\]
+C, as a boundary takes the shape of a unit-disk extended between the bounds of x, thus
+it resembles a cylinder.
+
+Firstly the divergence can be evaluated:
+\[\nabla \cdot \mathbf{F} = 
+\frac{\partial F_x}{\partial  x} +
+\frac{\partial F_y}{\partial  y} +
+\frac{\partial F_z}{\partial  z} 
+= 
+\frac{\partial}{\partial x}(3xy^2)+
+\frac{\partial}{\partial y}(xe^z)+
+\frac{\partial}{\partial z}(z^3)
+=
+3y^2 + 0 +3z^2 = 3y^2 + 3z^2\]
+The bounds of integration then becomes:
+\[x = [-1:2], \qquad r=[0:1], \qquad \theta = [0:2\pi]\]
+\[\Phi = \int_{-2}^{3}\int_{0}^{1}\int_{0}^{2\pi} = (\nabla \cdot \mathbf{F}) r \ d\theta \ dr \ dx \]
+First integral:
+\[\int_{0}^{2\pi}3y^2 + 3z^2 \]
+\[\]
+\[\]
