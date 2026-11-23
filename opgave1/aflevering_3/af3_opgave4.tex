@@ -22,7 +22,20 @@ Firstly the divergence can be evaluated:
 The bounds of integration then becomes:
 \[x = [-1:2], \qquad r=[0:1], \qquad \theta = [0:2\pi]\]
 \[\Phi = \int_{-2}^{3}\int_{0}^{1}\int_{0}^{2\pi} = (\nabla \cdot \mathbf{F}) r \ d\theta \ dr \ dx \]
+However, the divergence needs to be rewritten in terms of polar coodinates:
+\[y = r \ cos(\theta),\qquad z = r \ sin(\theta)\]
+When rewritten, the trigonometric identity $cos^2\theta + sin^2\theta = 1$ can be recognized,
+this simplfies the expression:
+\[3y^2 + 3z^2 = (3r \ cos^2(\theta)+ 3r \ sin^2(\theta)) \Rightarrow 3r^2\]
 First integral:
-\[\int_{0}^{2\pi}3y^2 + 3z^2 \]
+\[\int_{0}^{2\pi} 3r^2 r d\theta = 3r^3\int_{0}^{2\pi}d\theta \Rightarrow \left[3r^3\cdot \theta\right]_0^{2\pi} = \left(3r^3\cdot 2\pi\right) - (3r^3\cdot 0) = 6\pi r^3\]
+Second integral:
+\[\int_{0}^{1} 6\pi r^3 dr = 6\pi \int_{0}^{1} r^3 dr \Rightarrow 
+\left[\frac{6\pi r^4}{4}\right]_0^1 = \left(\frac{3\pi \ 1^4}{2}\right) - \left(\frac{3\pi \ 0^4}{2}\right)
+=  \frac{3\pi}{2}\]
+Outer integral:
+\[\int_{-2}^{3} \frac{3\pi}{2}dx = \frac{3\pi}{2}\int_{-2}^{3}dx 
+\Rightarrow \left[\frac{3\pi \ x}{2}\right]_{-2}^{3} = 
+\left(\frac{3\pi \ 3}{2}\right) - \left(\frac{3\pi \ (-2)}{2}\right) = \frac{9\pi}{2} + \frac{6\pi}{2} = \frac{15\pi}{2} \]
 \[\]
 \[\]
