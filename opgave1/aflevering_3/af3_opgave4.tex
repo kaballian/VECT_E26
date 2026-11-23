@@ -21,7 +21,7 @@ Firstly the divergence can be evaluated:
 3y^2 + 0 +3z^2 = 3y^2 + 3z^2\]
 The bounds of integration then becomes:
 \[x = [-1:2], \qquad r=[0:1], \qquad \theta = [0:2\pi]\]
-\[\Phi = \int_{-2}^{3}\int_{0}^{1}\int_{0}^{2\pi} = (\nabla \cdot \mathbf{F}) r \ d\theta \ dr \ dx \]
+\[\Phi = \int_{-1}^{2}\int_{0}^{1}\int_{0}^{2\pi} = (\nabla \cdot \mathbf{F}) r \ d\theta \ dr \ dx \]
 However, the divergence needs to be rewritten in terms of polar coodinates:
 \[y = r \ cos(\theta),\qquad z = r \ sin(\theta)\]
 When rewritten, the trigonometric identity $cos^2\theta + sin^2\theta = 1$ can be recognized,
@@ -34,8 +34,8 @@ Second integral:
 \left[\frac{6\pi r^4}{4}\right]_0^1 = \left(\frac{3\pi \ 1^4}{2}\right) - \left(\frac{3\pi \ 0^4}{2}\right)
 =  \frac{3\pi}{2}\]
 Outer integral:
-\[\int_{-2}^{3} \frac{3\pi}{2}dx = \frac{3\pi}{2}\int_{-2}^{3}dx 
+\[\int_{-1}^{2} \frac{3\pi}{2}dx = \frac{3\pi}{2}\int_{-1}^{2}dx 
 \Rightarrow \left[\frac{3\pi \ x}{2}\right]_{-2}^{3} = 
-\left(\frac{3\pi \ 3}{2}\right) - \left(\frac{3\pi \ (-2)}{2}\right) = \frac{9\pi}{2} + \frac{6\pi}{2} = \frac{15\pi}{2} \]
+\left(\frac{3\pi \ 2}{2}\right) - \left(\frac{3\pi \ (-1)}{2}\right) = \frac{6\pi}{2} + \frac{3\pi}{2} = \frac{9\pi}{2} \]
 \[\]
 \[\]
