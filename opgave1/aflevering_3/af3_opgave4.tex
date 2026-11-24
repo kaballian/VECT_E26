@@ -3,7 +3,8 @@
 by: $F(x,y,z) = (3xy^2, xe^z, z^3)$, and let $S$ be the boundary of
 $C = \{(x,y,z) \in \mathbb{R}^3 | y^2 + z^2 = 1, -1 \le x \le 2\}$}\\
 
-The flux can be Calculated using Gauss theorem
+The flux can be Calculated using Gauss theorem. Since in this case, the bounds given
+resembles a cylinder, thus it can be calculated as the volume of that shape.
 \[\iint_S \mathbf{F} \cdot \mathbf{n} \ dS = \iiint_V \nabla \cdot \mathbf{F} \ dV\]
 C, as a boundary takes the shape of a unit-disk extended between the bounds of x, thus
 it resembles a cylinder.
@@ -28,13 +29,13 @@ When rewritten, the trigonometric identity $cos^2\theta + sin^2\theta = 1$ can b
 this simplfies the expression:
 \[3y^2 + 3z^2 = (3r \ cos^2(\theta)+ 3r \ sin^2(\theta)) \Rightarrow 3r^2\]
 First integral:
-\[\int_{0}^{2\pi} 3r^2 r d\theta = 3r^3\int_{0}^{2\pi}d\theta \Rightarrow \left[3r^3\cdot \theta\right]_0^{2\pi} = \left(3r^3\cdot 2\pi\right) - (3r^3\cdot 0) = 6\pi r^3\]
+\[\int_{0}^{2\pi} 3r^2 \ r \ d\theta = 3r^3\int_{0}^{2\pi}d\theta \Rightarrow \left[3r^3\cdot \theta\right]_0^{2\pi} = \left(3r^3\cdot 2\pi\right) - (3r^3\cdot 0) = 6\pi r^3\]
 Second integral:
-\[\int_{0}^{1} 6\pi r^3 dr = 6\pi \int_{0}^{1} r^3 dr \Rightarrow 
+\[\int_{0}^{1} 6\pi r^3 \ dr = 6\pi \int_{0}^{1} r^3 dr \Rightarrow 
 \left[\frac{6\pi r^4}{4}\right]_0^1 = \left(\frac{3\pi \ 1^4}{2}\right) - \left(\frac{3\pi \ 0^4}{2}\right)
 =  \frac{3\pi}{2}\]
 Outer integral:
-\[\int_{-1}^{2} \frac{3\pi}{2}dx = \frac{3\pi}{2}\int_{-1}^{2}dx 
+\[\int_{-1}^{2} \frac{3\pi}{2} \ dx = \frac{3\pi}{2}\int_{-1}^{2}dx 
 \Rightarrow \left[\frac{3\pi \ x}{2}\right]_{-1}^{2} = 
 \left(\frac{3\pi \ 2}{2}\right) - \left(\frac{3\pi \ (-1)}{2}\right) = \frac{6\pi}{2} + \frac{3\pi}{2} = \frac{9\pi}{2} \]
 \[\]
