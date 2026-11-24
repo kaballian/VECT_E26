@@ -2,9 +2,99 @@
 \textit{Consider the function defined $f(x,y) = xy+14$ and let
 $g(x,y) = x^2+y^2-18$.}
 \begin{itemize}
-    \item Sketch the level-set for $f$: $L_1 = \{(x,y) \in | f(x,y) = 1\}$ and level-set for h: $M_0 = \{(x,y) \in | h(x,y) = 0\}$ in the same coordinate system.
+    \item Sketch the level-set for $f$: $L_1 = \{(x,y) \in | f(x,y) = 1\}$ and level-set for h: $M_0 = \{(x,y) \in | g(x,y) = 0\}$ in the same coordinate system.
     \item Find the maximum and minimum for $f$ subject to the constraint $g(x,y) = 0$ (argue for your calculations).
 \end{itemize}
+%A
+the sketch of the general shape of the function $L_1$ and $M_0$, can be done by selecting a few points which satisfies the equation
+for each of the sets. In $f(x,y) = xy+14$ the level is for $f(x,y)=1$, and since there a $+14$ in it can be solved such that:
+\[f(x,y) = xy+14 \Rightarrow xy+14=1 \Rightarrow xy=-13, \qquad x\neq 0, \qquad y\neq 0\]
 
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|}
+        \hline
+        $x$ & $y$ & $f(x,y)$ \\ \hline
+        -13  & 1   & 1 \\ \hline
+        -6.5 & 2   & 1 \\ \hline
+        -1   & 13  & 1 \\ \hline
+        1    & -13 & 1 \\ \hline
+        6.5  & -2  & 1 \\ \hline
+        13   & -1  & 1 \\ \hline
+    \end{tabularx}
+    \caption{Points belonging to the level set $L_1$.}
+    \label{tab:levelset}
+\end{table}
 %B
-Since $f$ and $g$ are functions with continuous first-order partial derivatives
+Since $f$ and $g$ are functions with continuous first-order partial derivatives, this can solved using lagrange multipliers.
+Since we're trying to find the minimum and maximum of a function, it is no longer possible to choose any combination of x and y,
+since the condition for $g(x,y) = 0$ needs to hold.
+Starting with the gradients:
+\[\nabla f(x,y) = 
+\begin{bmatrix}
+    \frac{\partial f}{\partial x}\\
+    \frac{\partial f}{\partial y}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    y\\x
+\end{bmatrix}
+,\qquad
+\nabla g(x,y) =  
+\begin{bmatrix}
+    \frac{\partial g}{\partial x}\\
+    \frac{\partial g}{\partial y}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    2x\\2y
+\end{bmatrix}\]
+Yielding two equations and the $g(x,y)$ function with the constraint
+\[
+\begin{cases}
+    y = \lambda \ 2x\\
+    x = \lambda \ 2y\\
+    x^2 + y^2 = 18
+\end{cases}
+\Rightarrow
+\begin{cases}
+    \lambda = \frac{y}{2x}\\
+    \lambda = \frac{x}{2y}\\
+    x^2+y^2=18
+\end{cases}
+\Rightarrow
+\begin{cases}
+    \frac{y}{2x} = \frac{x}{2y}\\
+    x^2+y^2=18
+\end{cases}
+\Rightarrow
+\begin{cases}
+    \frac{y}{x} = \frac{x}{y}\\
+    x^2+y^2=18
+\end{cases}
+\]
+\[
+\begin{cases}
+    y^2 = x^2\\
+    x^2+y^2=18
+\end{cases}
+\Rightarrow
+\begin{cases}
+    y^2 = \pm x\\
+    2x^2 = 18
+\end{cases}
+\Rightarrow
+    x = \pm \sqrt{\frac{18}{2}} = \begin{bmatrix}
+        3\\-3
+    \end{bmatrix}
+\]
+Since it has been shown that $y^2=x^2 \Rightarrow y = \begin{bmatrix}3\\-3\end{bmatrix}$
+Maximum and minimums is then determined by putting those x and y values into $f(x,y)$
+\[f(x,y) \Rightarrow 
+\begin{cases}
+    f(3,3) = 23\\
+    f(3,-3) = 5\\
+    f(-3,3) = 5\\
+    f(-3,-3) = 23
+\end{cases}\]
+\[\]

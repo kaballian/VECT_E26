@@ -1,4 +1,4 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'aflevering1.blg'
-[76] biber-MSWIN64:340> INFO - === 
-[102] Biber.pm:419> INFO - Reading 'aflevering1.bcf'
+[74] biber-MSWIN64:340> INFO - === 
+[100] Biber.pm:419> INFO - Reading 'aflevering1.bcf'
